@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   isAuthenticated: boolean;
 
   constructor(@Inject(DOCUMENT) private document: Document,
-              private authService: AuthService) {
+      private authService: AuthService) {
     this.isAuthenticated = false;
   }
 
