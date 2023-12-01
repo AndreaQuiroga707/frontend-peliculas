@@ -2,18 +2,19 @@
 <div>
   <ul>
     <li *ngFor="let persona of personas" (click)="seleccionarPersona(persona)">
-      <p>{{ persona.nombre }} </p>
+      <p>{{ persona.content }} </p>
       
     </li>
   </ul>
   <p>{{ miVariable }}</p>
   <div *ngIf="personaSeleccionada">
     <p>ID: {{ personaSeleccionada.id }}</p>
-    <p>Nombre: <input type="text" [(ngModel)]="personaSeleccionada.nombre" /></p>
+    <p>Content: <input type="text" [(ngModel)]="personaSeleccionada.content" /></p>
 
     <button (click)="actualizarPersona()">Actualizar</button>
     <button (click)="eliminarPersona(personaSeleccionada.id!)">Eliminar</button>
   </div>
+
 
   <p>Ingresa tu comentario: <input [(ngModel)]="nuevoComentario.texto" required/></p> 
   <button (click)="agregarComentario1()"[disabled]="!nuevoComentario.texto">Agregar</button>

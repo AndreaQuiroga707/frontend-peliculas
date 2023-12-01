@@ -12,7 +12,7 @@ export class PersonaComponent implements OnInit {
 
   miVariable: string = "";
   personas: Persona[] = [];
-  nuevaPersona: Persona = { nombre: '', edad: 0 };
+  nuevaPersona: Persona = { content: '', edad: 0 };
   nuevoComentario: Comentario = { texto: '', estado: false };
   personaSeleccionada: Persona | null = null;
   currentDate: Date = new Date();  //para la hora y fecha
@@ -40,7 +40,7 @@ export class PersonaComponent implements OnInit {
     this.personaService.agregarPersona(this.nuevaPersona).subscribe((res) => {
 
       this.obtenerPersonas();
-      this.nuevaPersona = { nombre: '', edad: 0 };
+      this.nuevaPersona = { content: '', edad: 0 };
     });
   }
   
@@ -54,17 +54,17 @@ export class PersonaComponent implements OnInit {
       }else{
         alert("Tu comentario se almaceno con exito"); // debemos almacenar los comentarios y a la persona y despues limpiar los ampos de entrada
 
-      this.nuevaPersona.nombre=res.texto;
+      this.nuevaPersona.content=res.texto;
       this.nuevaPersona.edad=this.nuevaPersona.edad;
       this.agregarPersona();  //llamo al metodo para guardar los campos a la base de datos
       
       let currentDate = new Date();
-      alert(currentDate);  
+      //alert(currentDate);  
       console.log(currentDate);
       this.miVariable=res.texto;
       }
 
-      this.nuevaPersona = { nombre: '', edad: 0 }; //esto limpia las entradas del html 
+      this.nuevaPersona = { content: '', edad: 0 }; //esto limpia las entradas del html 
       this.nuevoComentario = { texto: '', estado: false }; //esto limpia las entradas del html 
     });
   }
