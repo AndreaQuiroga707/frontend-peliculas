@@ -7,6 +7,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CommonModule } from '@angular/common';
 import { MoviesComponent } from './pages/movies/movies.component';
+import { PersonaComponent } from './pages/persona/persona.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -19,6 +21,7 @@ const routes: Routes = [
   {path: 'movies/:id', component: MoviesComponent},
   {path: '', pathMatch: 'full', redirectTo: '/home'},
   {path: '**', pathMatch: 'full', redirectTo: '/home'},
+  {path: 'persona', component: PersonaComponent}
 ];
 
 @NgModule({

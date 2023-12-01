@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { SearchComponent } from './pages/search/search.component';
+import { PersonaComponent } from './pages/persona/persona.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,13 @@ import { SearchComponent } from './pages/search/search.component';
     LoginComponent,
     HomeComponent,
     MoviesComponent,
-    SearchComponent
+    SearchComponent,
+    PersonaComponent,
+
   ],
   imports: [
     RouterModule,
+    FormsModule ,
     //PagesModule,
     SharedModule,
     HttpClientModule,
