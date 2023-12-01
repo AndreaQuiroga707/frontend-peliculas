@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-//import { HomeComponent } from './components/home/home.component';
 //para bloquear rutas
 import { AuthGuard } from '@auth0/auth0-angular';
 import { SearchComponent } from './pages/search/search.component';
@@ -29,8 +28,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-/*@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})*/
+
 export class AppRoutingModule { }

@@ -1,20 +1,24 @@
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body"data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">MoviesApp</a> 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar pelicula" aria-label="Search">
-          <button class="btn btn-outline-secondary " type="submit">Buscar</button>
-          <div class="col-md-3 text-end" *ngIf="isLoggedIn">
-            <button type="button" (click)="logOut()" class="btn btn-outline-primary me-2">Logout</button>
-          </div>
-        </form>
+   <!--navbar start  -->
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" [ngStyle]="navbg">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">Movies App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="search">Search</a>
+        </li>
+      </ul>
+      <div class="col-md-3 text-end" *ngIf="isLoggedIn">
+        <button type="button" (click)="logOut()" class="btn btn-outline-danger me-2">Logout</button>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+<!-- navbar end  -->
 

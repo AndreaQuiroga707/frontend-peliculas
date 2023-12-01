@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movies.interface';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Title,Meta } from '@angular/platform-browser';
+import { AuthService } from '@auth0/auth0-angular';
 
 
 @Component({
@@ -11,9 +12,12 @@ import { Title,Meta } from '@angular/platform-browser';
 })
 
 export class HomeComponent implements OnInit {
-
+ /* constructor(public auth: AuthService) { }
+  ngOnInit(): void{
+  }
+  */
   constructor(private service: MoviesService,private title:Title,private meta:Meta) {
-    this.title.setTitle('Home - showtime');
+    this.title.setTitle('MoviesApp');
     this.meta.updateTag({name:'description',content:'watch online movies'});
     
    }  
@@ -39,7 +43,6 @@ export class HomeComponent implements OnInit {
     this.sciencefictionMovie();
     this.thrillerMovie();
   }
-
 
   // bannerdata
   bannerData() {
@@ -113,20 +116,3 @@ export class HomeComponent implements OnInit {
   }
 
 }
-
-/*
-export class HomeComponent implements OnInit{
-
-  movie:Movie[]=[];
-  movieSlideShow:Movie[]=[];
-
-  constructor(private moviesSvc:MoviesService){}
-
-  ngOnInit(): void {
-    this.moviesSvc.getMovies().subscribe(movies=>{
-      //console.log(movies);
-      this.movieSlideShow=movies;
-      this.movie=movies;
-    });
-  }
-}*/

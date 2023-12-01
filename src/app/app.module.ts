@@ -3,24 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
-import { PagesModule } from './pages/pages.module';
+//import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './pages/home/home.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     HomeComponent,
-    LoginComponent
+    MoviesComponent,
+    SearchComponent
   ],
   imports: [
     RouterModule,
-    PagesModule,
+    //PagesModule,
     SharedModule,
     HttpClientModule,
     BrowserModule,

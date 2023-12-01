@@ -22,5 +22,7 @@ export class AppComponent implements OnInit {
       this.isAuthenticated = success;
     });
   }
+
+  
 }
   
